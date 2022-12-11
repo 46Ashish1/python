@@ -1,0 +1,24 @@
+def calcsales(sale1, sale2, sale3, sale4):
+ totalsales = sale1+sale2+sale3+sale4
+ commision_amt = 0
+ if totalsales >= 50000:
+ commision_amt = totalsales*0.05
+ remarks = ""
+ if totalsales >= 80000:
+ remarks = "Excellent"
+ elif totalsales >= 60000:
+ remarks = "Good"
+ elif totalsales >= 40000:
+ remarks = "Average"
+ elif totalsales < 40000:
+ remarks = "Work Hard"
+ return totalsales, commision_amt, remarks
+if __name__ == "__main__":
+ sale1 = int(input("Enter the sales for week 1: "))
+ sale2 = int(input("Enter the sales for week 2: "))
+ sale3 = int(input("Enter the sales for week 3: "))
+ sale4 = int(input("Enter the sales for week 4: "))
+ totsales, commision, remarks = calcsales(sale1, sale2, sale3, sale4)
+ print("Total Sales: Rs.{:.2f}".format(totsales))
+ print("Commission: Rs.{:.2f}".format(commision))
+ print("Remarks:", remarks)
